@@ -1,0 +1,15 @@
+<li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{item?.product?.title}}</div>
+      EUR.{{item?.product?.price?.value}}
+    </div>
+    <div class="input-group mb-3" style="width:100px;margin-right: 15px;">
+      <span class="input-group-text bg-primary" 
+      style="color:snow"
+      (click)="addProductQuantity(item?.product?.ISBN!)">+</span>
+      <input type="text" class="form-control" value="{{item?.quantity}}">
+      <span class="input-group-text bg-primary" style="color:snow"
+      (click)="subtractProductQuantity(item?.product?.ISBN!)">-</span>
+    </div>
+    <button class="bg-secondary px-2 py-1" style="color:snow;border:1px solid snow;" (click)="removeProduct(item?.product?.ISBN!)"> x </button>
+  </li>

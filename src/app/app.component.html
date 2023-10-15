@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row ">
+    <h1>Products</h1>
+    <div class="col-lg-8">
+      <div class="row">
+       <div *ngFor="let book of books" class="col-lg-4">
+        <app-card [product]="book" (addproduct)="insertProduct($event)"></app-card>
+       </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h1>Cart</h1>
+      <ol class="list-group list-group-numbered">
+        <app-cart-list 
+        *ngFor="let item of cartItems"
+         [item]="item" (removeFromCart)="removeProduct($event)"
+        (addQuantity)="addquantity($event)"
+        (subtractQuantity)="subtractquantity($event)"
+        ></app-cart-list>
+      </ol>
+      <h3>Total Price:EUR {{finalPrice}}</h3>
+    </div>
+  </div>
+</div>
